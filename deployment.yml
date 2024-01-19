@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-demo-app
+spec:
+  selector:
+    matchLabels:
+      app: argo-demo-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: argo-demo-app
+    spec:
+      containers:
+        - name: spring-boot-k8s
+          image: docker pull nginx:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
