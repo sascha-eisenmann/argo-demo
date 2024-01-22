@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-k8s
-          image: docker pull nginx:latest
+          image: nginx:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
